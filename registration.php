@@ -4,6 +4,8 @@ require 'connection.php';
 $username1 = $_POST['login'];
 $password1 = $_POST['password'];
 $confirm = $_POST['confPassword'];
+$first_name = $_POST['firstName'];
+$second_name = $_POST['secondName'];
 $token1 = rand(1, 10);
 $token2 = rand(1, 10);
 
@@ -13,7 +15,7 @@ if ($password1 == $confirm) {
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $count = mysqli_num_rows($result);
     if ($count == 0) {
-        $sql = "INSERT INTO `users`(`login`, `password`, `token1`, `token2`, `verified`,`admin`) VALUES ('$username1','$password1', '$token1' ,'$token2' , 0, 0)";
+        $sql = "INSERT INTO `users`(`login`, `password`,`first_name`,`second_name`, `token1`, `token2`, `verified`,`type`) VALUES ('$username1','$password1','$first_name','$second_name', '$token1' ,'$token2' , 0, 'user')";
         if (mysqli_query($con, $sql)) {
 
             $sqlCheck = "select * from users where login = '$username1' and password = '$password1'";

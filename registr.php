@@ -54,6 +54,12 @@
         <div class = "col-lg-6">
             <form action = "registration.php" method="post" class="form-login">
                 <div class="form-label-group">
+                    <input type="text" style = "height : 50px;" class= "form-control my-3 col-lg-12" placeholder="Имя" name = "firstName" required autofocus>
+                </div>
+                <div class="form-label-group">
+                    <input type="text" style = "height : 50px;" class= "form-control my-3 col-lg-12" placeholder="Фамилия" name = "secondName" required autofocus>
+                </div>
+                <div class="form-label-group">
                     <input type="text" style = "height : 50px;" class= "form-control my-3 col-lg-12" placeholder="Логин" name = "login" required autofocus>
                 </div>
                 <div class="form-label-group">
